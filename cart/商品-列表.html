@@ -1,0 +1,119 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/goodsLst.css" />
+</head>
+
+<body>
+  <div id="cont">
+
+  </div>
+</body>
+
+</html>
+<script src="./cookie.js"></script>
+<script>
+  // 1 构造json数据,每一个json中就是一个商品
+  var json = [{
+    "id": 1,
+    "src": "http://img13.360buyimg.com/n1/s350x449_jfs/t1/109772/8/16113/126855/5eb133a2E55a5ed55/49f02e1d357af8f7.jpg!cc_350x449.jpg",
+    "price": 1099, "name": "小米8青春版 镜面渐变AI双摄 6GB+64GB 深空灰 全网通4G"
+  },
+  {
+    "id": 2,
+    "src": "https://img11.360buyimg.com/n7/jfs/t2278/69/129833021/96430/df8863b1/55f0e861Nf585867f.jpg",
+    "price": 3599.00,
+    "name": "Apple iPhone 6s Plus (A1699) 128G 银色 移动联通电信4G手机"
+  },
+  {
+    "id": 3,
+    "src": "https://img10.360buyimg.com/n7/jfs/t3985/131/486256904/433682/1d9fc4d0/584fcc81N1a31a2c5.jpg",
+    "price": 3059.00,
+    "name": "华为 Mate 9 Pro 6GB+128GB版 银钻灰 移动联通电信4G手机 双卡双待"
+  },
+  {
+    "id": 4,
+    "src": "http://img14.360buyimg.com/n1/s350x449_jfs/t1/126208/3/1122/143313/5eb99ad4Efe3ed0e7/86381baebbae3576.jpg!cc_350x449.jpg",
+    "price": 1099.00,
+    "name": "荣耀 畅玩7X 4GB+32GB 全网通4G全面屏手机 标配版 幻夜黑"
+  }, {
+    "id": 5,
+    "src": "https://img10.360buyimg.com/n7/jfs/t3985/131/486256904/433682/1d9fc4d0/584fcc81N1a31a2c5.jpg",
+    "price": 3059.00,
+    "name": "华为 Mate 9 Pro 6GB+128GB版 银钻灰 移动联通电信4G手机 双卡双待"
+  }, {
+    "id": 6,
+    "src": "https://img10.360buyimg.com/n7/jfs/t10729/149/1744838942/273871/5b00d30c/59e5bd89Ndc046ccd.jpg",
+    "price": 1099.00,
+    "name": "荣耀 畅玩7X 4GB+32GB 全网通4G全面屏手机 标配版 幻夜黑"
+  }
+    , {
+    "id": 7,
+    "src": "https://img10.360buyimg.com/n7/jfs/t3985/131/486256904/433682/1d9fc4d0/584fcc81N1a31a2c5.jpg",
+    "price": 3059.00,
+    "name": "华为 Mate 9 Pro 6GB+128GB版 银钻灰 移动联通电信4G手机 双卡双待"
+  }, {
+    "id": 8,
+    "src": "https://img13.360buyimg.com/n5/jfs/t1/132542/35/3544/159084/5efd95e8E45ac2dc8/cd4f818ecb63fff7.jpg",
+    "price": 1099.00,
+    "name": "荣耀 畅玩7X 4GB+32GB 全网通4G全面屏手机 标配版 幻夜黑"
+  }
+  ];
+  //2 循环json数组,遍历出每一条json对象
+  let html = '';
+  json.forEach(goods => {
+    let { src, price, name, id } = goods;
+    // console.log(goods);
+    html += '<div class="box"><img src="' + src + '" alt=""><p>' + name + '</p><span class="goods_item_price" data-price-id="100004222715" style="color: rgb(221, 69, 69); margin: 0px 5px;">¥' + price + '</span><a href="#none" id="InitCartUrl" class="btn-special1 btn-lg" onclick="addCart(' + id + ',1)">加入购物车</a></div>'
+  })
+
+  // console.log(html);
+  // 3获取节点对象
+  let div = document.getElementById('cont');
+  // 追加的是节点对象时,用appendChild()  字符串时用 innerHTML
+  div.innerHTML = html;
+
+  function addCart(gId, num) {
+    //1 取出cart数据
+    let cartGoods = cookie.getCookie('cart');
+    // console.log(cartGoods);
+
+    // 2 判断购物车是否有数据
+    if (cartGoods) {  //3 有数据
+      // 3-1 将json转化为对象
+      cartGoods = JSON.parse(cartGoods)
+      // console.log(cartGoods, 3);
+      // 3-2 循环对象,查找当前添加的商品,是否存在
+      for (let attr in cartGoods) {
+        // console.log(attr);
+        if (attr == gId) {
+          // 存在则将原来的数量累加
+          console.log(cartGoods, cartGoods[gId]);
+
+          num += cartGoods[gId];
+        }
+      }
+      // 3-3 属性存在则修改值,属性不存在则添加
+      cartGoods[gId] = num;
+      // cartGoods.2=2    cartGoods.1=1
+      // 3-4 存入cookie
+      cookie.setCookie('cart', JSON.stringify(cartGoods))
+      // console.log(cartGoods);
+
+    } else { // 4 没有数据
+      // 4-1 以商品id为key,数量为val
+      let cartGoods = { [gId]: num }
+
+      // console.log(cartGoods);
+      // 4-2 将对象转化为json
+      cartGoods = JSON.stringify(cartGoods);
+
+      cookie.setCookie('cart', cartGoods)
+
+    }
+
+
+  }
+</script>

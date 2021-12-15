@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="弹出">
+    <!-- 引入jq文件 -->
+    <script src="js/jquery-2.2.4.js"></script>
+    <!-- 引入layer.js这个插件，主要用于实现点击后弹出模态框 -->
+    <script src="layer-master/src/layer.js"></script>
+    <script>
+        // 点击按钮时弹出
+        // 给按钮绑定事件
+        $('input').click(function () {
+            layer.open({
+                title: '确认删除',
+                content: '确定要删除我吗？',
+                // 按钮
+                btn: ['再考虑一下','残忍删除'],
+                // 按钮的回调事件
+                btn2:function(index,layero){
+                    console.log('sure?');
+                }
+            });
+        })
+    </script>
+
+</body>
+
+</html>

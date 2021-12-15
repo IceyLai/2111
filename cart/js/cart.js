@@ -69,5 +69,9 @@ class Cart {
         console.log('我是远程仓库目录下的2111文件');
     }
 
+    hello(){
+        console.log('hello');
+    }
+
 }
 new Cart

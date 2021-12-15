@@ -72,6 +72,9 @@ class Cart {
     hello(){
         console.log('hello');
     }
+    test(){
+        console.log('test');
+    }
 
 }
 new Cart

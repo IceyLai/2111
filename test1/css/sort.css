@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* .tab{
+    margin-top: 50px;
+} */
+
+.clearfix::after{
+    display: block;
+    content: '';
+    clear: both;
+    height: 0;
+}
+
+.tabBtn {
+    display: flex;
+}
+
+.tabBtn>span {
+    width: 200px;
+    height: 50px;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.tabBtn>.bg {
+    background-color: rgb(255, 103, 0);
+}
+
+.tabUL {
+    width: 1200px;
+    /* height: 400px; */
+    /* background-color: rosybrown; */
+}
+
+.tabUL>.show {
+    display: block;
+}
+
+.tabUL>ul {
+    width: 100%;
+    list-style: none;
+    display: none;
+    text-align: center;
+}
+
+.tabUL>ul .phoneItem {
+    margin: 20px;
+    width: 250px;
+    height: 380px;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+.phonePic {
+    margin-left: 25px;
+    width: 200px;
+    height: 200px;
+}
+
+.phoneItem-name{
+    color: black;
+}
+.phoneItem-info {
+    color: #ccc;
+    margin-top: 20px;
+}
+
+.phoneItem-price {
+    font-size: 12px;
+    margin-top: 20px;
+    color: black;
+}
+
+.newPrice {
+    color: red;
+    margin-right: 20px;
+
+}
+
+.oldPrice {
+    /* color: #ccc; */
+    text-decoration: line-through;
+}
+
+.phoneCart {
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    background-color: rgb(255, 103, 0);
+    text-align: center;
+    float: right;
+    margin-right: 20px;
+    line-height: 30px;
+}
+
+.phoneCart a {
+    color: white;
+}
+
+.show {
+    display: block;
+}

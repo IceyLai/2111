@@ -97,10 +97,12 @@ class register {
             data
         } = await axios.get(' http://localhost:3000/user?phone=' + phoneNum)
         // console.log(data);
-      
 
-        // 如果data有值，就说明已经存在这条数据
-        if (data) {
+
+        // // 如果data有值，就说明已经存在这条数据
+        // 因为没有这个号码对应的数据，就会返回一个空数组，空数组也会转化为布尔值的true
+        // 所以我们需要利用data这个数组的length去判断，如果不为0说明有这条数据，就执行if的语句
+        if (data.length != 0) {
             layer.open({
                 content: '账号已经注册请直接登录',
                 // 按钮
@@ -110,9 +112,10 @@ class register {
                     location.href = './login2.html'
                 }
             });
-        }else{
+        } else {
             // 没有值就把这条数据添加到json文件中
             this.addJson(phoneNum, pwd, email)
+            alert('注册成功，去登录吧')
         }
     }
 

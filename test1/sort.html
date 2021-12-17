@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>详细信息</title>
+    <title>小米分类</title>
     <!-- 重置样式 -->
     <link rel="stylesheet" href="./css/reset.css">
     <!-- 公共样式 -->
     <link rel="stylesheet" href="./css/base.css">
     <!-- 当前主页样式 -->
-    <link rel="stylesheet" href="./css/good-details.css">
-    <!-- 尾部样式 -->
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
     <!-- 图标库 -->
     <link rel="stylesheet" href="./iconfont/iconfont.css">
-    <link rel="shortcut icon" href="./icon/favicon.ico" type="image/x-icon">
-    <!-- 轮播图 -->
-    <!-- <script src="./js/slide.js"></script> -->
-    <!-- layui -->
-    <link rel="stylesheet" href="./layui-v2.6.8/layui/css/layui.css">
-    <script src="./layui-v2.6.8/layui/layui.js"></script>
+    <!-- 底部样式表 -->
+    <link rel="stylesheet" href="./css/footer.css">
+    <!-- 中间分类样式 -->
+    <link rel="stylesheet" href="./css/sort.css">
+    <!-- 图标库 -->
+    <!-- <link rel="stylesheet" href="./font_2818560_0fh99lg0a8ji/iconfont.css"> -->
+    <!-- <script src="./font_2818560_0fh99lg0a8ji/iconfont.js"></script> -->
+    
 </head>
 
 
@@ -35,7 +35,7 @@
                 <nav>
                     <ul class="service">
                         <li>
-                            <a href="./index.html">小米商城</a>
+                            <a href="javascript:;">小米商城</a>
                             <span>|</span>
                         </li>
 
@@ -123,11 +123,11 @@
                 <!-- 用户登录注册 -->
                 <ul class="header-info fr">
                     <li>
-                        <a href="#">登录</a>
+                        <a href="./login2.html">登录</a>
                         <span>|</span>
                     </li>
                     <li>
-                        <a href="#">注册</a>
+                        <a href="./register.html">注册</a>
                         <span>|</span>
                     </li>
                     <li>
@@ -137,17 +137,15 @@
                 </ul>
             </div>
         </div>
+
         <!-- 中间的header -->
         <section>
             <div class="headNav w">
                 <div class="logo-wrapper pos-r fl">
-                    <a href="./index.html">
-                        <div class="logo pos-a"></div>
-                    </a>
+                    <div class="logo pos-a"></div>
                 </div>
 
                 <ul class="h-list fl fs16">
-                    <!-- 全部商品 -->
                     <li class="h-list-first">
                         <a href="javascipt:;">全部商品分类</a>
                     </li>
@@ -527,9 +525,9 @@
                         <a href="javascript:;">社区</a>
                     </li>
                 </ul>
-                <!-- 搜索下拉框 -->
+
                 <form action="" class="h-search fr">
-                    <input type="text " placeholder="小米手机">
+                    <input type="text" placeholder="小米手机">
                     <button type="submit"><i class="iconfont icon-sousuo"></i></button>
                     <ul class="search-list">
                         <li>全部商品</li>
@@ -545,399 +543,57 @@
             </div>
         </section>
     </header>
-    <!-- 吸顶效果 -->
-    <div class="xi-product">
-        <div class="xm-nav" >
-            <div class="container">
-                <h2>Redmi K30 5G</h2>
-                <a href="#">用户评价</a>
-            </div>
+
+
+
+    <!-- 中间主体分类 main-->
+    <section class="tab container">
+        <div class="tabBtn">
+            <span class="bg">手机</span>
+            <span>家电</span>
+            <span>智能</span>
+            <span>搭配</span>
+            <span>配件</span>
+            <span>周边</span>
         </div>
-    </div>
-    <!-- 主要部分 -->
-    <div class="page">
-        <!-- 有×叉 -->
-        <div class="mi-details">
-            <div class="login-notice">
-                为方便您购买，请提前登录
-                <a href="./login2.html">
-                    立即登录
-                </a>
-                <a class="iconfont icon-cha" id='close'></a>
-            </div>
-        </div>
-
-        <!-- 弹性盒产品左右栏 -->
-        <div class="product-box">
-            <!-- 左边轮播 写成放大镜效果-->
-            <div class="img-left">
-                <div class="container">
-                    <ul class="wrapper">
-                        <li style="display:block">
-                            <a href="javascript:;">
-                                <img src="https://z3.ax1x.com/2021/09/23/4wdy1P.jpg">
-                            </a>
-                        </li>
-                    </ul>
-                    <!--翻页按钮区域-->
-                    <div class="turning">
-                        <a href="javascript:;">&lt;</a>
-                        <a href="javascript:;">&gt;</a>
-                    </div>
-                    <!--分页器区域-->
-                    <div class="pagination">
-                        <span class="active"></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 右边数据部分 -->
-            <div class="product-con">
-                <h2>Redmi K30 5G</h2>
-                <p class="sale-decr">
-                    双模5G/三路并发/高通骁龙765G /7nm 5G低功耗处理器/120Hz高帧率流速屏/6.6''小孔径全面屏/索尼6400万前后六摄/最高可选8GB+256GB大存储/4500mAh+30W/快充/3D四曲面玻璃机身Ⅰ多功能NFC
-                </p>
-                <p class="company-info">
-                    小米自营
-                </p>
-                <p class="price-info">
-                    <span>
-                        1799
-                    </span>
-                </p>
-                <div class="line">
-
-                </div>
-                <div class="product-address">
-                    <i class="iconfont icon-dingwei icon"></i>
-                    <div class="address-con">
-                        <div>
-                            <div class="address-info">
-                                <span>北京</span>
-                                <span>北京市</span>
-                                <span>海淀区</span>
-                                <span>清河街道</span>
-                                <a href="javascript;">修改</a>
-                            </div>
-                        </div>
-                        <div class="storage">
-                            <span>有现货</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="buychoies">
-                    <div class="title fs18">
-                        选择颜色
-                    </div>
-                    <ul class="clearfix">
-                        <li title="紫玉幻境" class="active">
-                            <a href="">
-                                紫玉幻境
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="selected-list">
-                    <ul>
-                        <li>
-                            Redmi K30 5G 紫玉幻境 通用
-                            <span class="fr">1799</span>
-                        </li>
-                    </ul>
-                    <div class="total-price">
-                        总计：1799
-                    </div>
-                </div>
-                <div class="btn-box">
-                    <div class="putin"> <a href="javascript:0;">加入购物车</a></div>
-                    <div class="likes"> <a href="#"><i class="iconfont icon-xin"></i>喜欢</a></div>
-                </div>
-                <div class="after-sale-info">
-                    <span><a href="javascript:void(0);">
-                            <i class="iconfont icon-tick"></i>
-                            <em>小米自营</em>
-                        </a>
-                    </span>
-                    <span><a href="javascript:void(0);">
-                            <i class="iconfont icon-tick"></i>
-                            <em>小米发货</em>
-                        </a>
-                    </span>
-                    <span><a href="javascript:void(0);">
-                            <i class="iconfont icon-tick"></i>
-                            <em>7天无理由退货</em>
-                        </a>
-                    </span>
-                    <span><a href="javascript:void(0);">
-                            <i class="iconfont icon-tick"></i>
-                            <em>运费说明</em>
-                        </a>
-                    </span>
-                    <span><a href="javascript:void(0);">
-                            <i class="iconfont icon-tick"></i>
-                            <em>企业信息</em>
-                        </a>
-                    </span>
-                    <span><a href="javascript:void(0);">
-                            <i class="iconfont icon-tick"></i>
-                            <em>售后服务政策</em>
-                        </a>
-                    </span>
-                    <span><a href="javascript:void(0);">
-                            <i class="iconfont icon-tick"></i>
-                            <em>7天价格保护</em>
-                        </a>
-                    </span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- 那两张图片 -->
-    <div class="pic-main">
-        <!-- 官方微信 -->
-        <section>
-            <div class="view">
-                <div class="title">
-                    <h3>官方微信</h3>
-                </div>
-                <div class="img-box">
-                    <img src="./img/weixin.jpg" alt="">
-                </div>
-            </div>
-        </section>
-        <!-- 价格说明 -->
-        <section>
-            <div class="view">
-                <div class="title">
-                    <h3>价格说明</h3>
-                </div>
-                <div class="img-box">
-                    <img src="./img/price-dicr.jpeg" alt="">
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!--底部 -->
-    <footer>
-        <!-- 主体 -->
-        <div class="f-service w">
-            <!-- 服务 -->
-            <ul class="list-service ">
-                <li style="border: none;"><a href="javascipt:;"><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-gongju"></use>
-                        </svg>预约维修服务</a></li>
-                <li><a href="javascipt:;"><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-7tiantuihuan"></use>
-                        </svg>7天无理由退货</a></li>
-                <li><a href="javascipt:;"><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-15tianwuliyoutuihuo"></use>
-                        </svg>15天免费退货</a></li>
-                <li><a href="javascipt:;"><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-liwu"></use>
-                        </svg>满69包邮</a></li>
-                <li><a href="javascipt:;"><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-didian"></use>
-                        </svg>520余家售后网点</a></li>
+        <div class="tabUL">
+            <!-- 手机对应内容 -->
+            <ul  class="show clearfix" id='phone'>
+                <!-- <li class="phoneItem">
+                    <img src="./img/家电2.webp" class="phonePic" alt="">
+                    <h3 class="phoneItem-name">小米电视6 65” OLED</h3>
+                    <p class="phoneItem-info">小米电视6 65″OLED</p>
+                    <p class="phoneItem-price">
+                        现价：<span class="newPrice">6999元</span>
+                        原价：<span class="oldPrice">8999元</span>
+                    </p>
+                    <div class="phoneCart"><a href="#">加入购物车</a></div>
+                </li> -->
             </ul>
-            <!-- 联系 -->
-            <div class="f-link clearfix">
-                <dl>
-                    <dt>帮助中心</dt>
-                    <dd><a href="javascipt:;">账户管理</a></dd>
-                    <dd><a href="javascipt:;">购物管理</a></dd>
-                    <dd><a href="javascipt:;">订单操作</a></dd>
-                </dl>
-                <dl>
-                    <dt>服务支持</dt>
-                    <dd><a href="javascipt:;">售后政策</a></dd>
-                    <dd><a href="javascipt:;">自助服务</a></dd>
-                    <dd><a href="javascipt:;">相关下载</a></dd>
-                </dl>
-                <dl>
-                    <dt>线下门店</dt>
-                    <dd><a href="javascipt:;">小米之家</a></dd>
-                    <dd><a href="javascipt:;">服务网点</a></dd>
-                    <dd><a href="javascipt:;">授权体验店</a></dd>
-                </dl>
-                <dl>
-                    <dt>关于小米</dt>
-                    <dd><a href="javascipt:;">了解小米</a></dd>
-                    <dd><a href="javascipt:;">加入小米</a></dd>
-                    <dd><a href="javascipt:;">投资者关系</a></dd>
-                    <dd><a href="javascipt:;">企业社会责任</a></dd>
-                    <dd><a href="javascipt:;">廉洁举报</a></dd>
-                </dl>
-                <dl>
-                    <dt>帮助中心</dt>
-                    <dd><a href="javascipt:;">新浪微博</a></dd>
-                    <dd><a href="javascipt:;">官方微信</a></dd>
-                    <dd><a href="javascipt:;">联系我们</a></dd>
-                    <dd><a href="javascipt:;">公益基金会</a></dd>
-                </dl>
-                <dl>
-                    <dt>特色服务</dt>
-                    <dd><a href="javascipt:;">F码通道</a></dd>
-                    <dd><a href="javascipt:;">礼物码</a></dd>
-                    <dd><a href="javascipt:;">防伪查询</a></dd>
-                </dl>
-                <!-- 右侧联系 -->
-                <div class="col-tel fr">
-                    <p class="phone">400-100-5678</p>
-                    <p>8:00-18:00(仅收市话费)</p>
-                    <div class="f-btn fs12 clearfix">
-                        <i class="iconfont icon-icon-test"></i>
-                        人工客服
-                    </div>
-                    <div class="follow fs12 pos-r">
-                        关注小米：
-                        <i class="iconfont  icon-weibo"></i>
-                        <i class="iconfont  icon-weixin weixin">
-                            <img src="./img/wx-img.png" alt="" style="display: none;" id="followwximg">
-                        </i>
 
-                    </div>
-                </div>
+            <!-- 家电对应内容 -->
+            <ul id='ele' class="clearfix"> </ul>
 
-            </div>
-            <!-- 信息 -->
-            <div class="f-info clearfix">
-                <!-- logo -->
-                <div class="logo fl"></div>
-                <!-- 网站 -->
-                <div class="f-sites fl fs12">
-                    <p class="sites">
-                        <a href="javascript:;">小米商城</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">MIUI</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">米家</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">米聊</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">多看</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">游戏</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">政企服务</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">小米天猫店</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">小米集团隐私政策</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">小米公司儿童信息保护规则</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">小米商城隐私政策</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">小米商城用户协议</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">问题反馈</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">Select Location</a>
+            <!-- 智能对应内容 -->
+            <ul id='master' class="clearfix"></ul>
 
-                    </p>
-                    <p class="sites">
-                        <a href="javascript:;">北京互联网法院法律服务工作站</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">中国消费者协会</a>
-                        <sapn>|</sapn>
-                        <a href="javascript:;">北京市消费者协会</a>
-                    </p>
-                    <p class="f-copy">
-                        &copy;
-                        <a href="javascript:;">mi.con</a>京ICP证110507号
-                        <a href="javascript:;">京ICP备10046444号</a>
-                        <a href="javascript:;">京公网安备11010802020134号</a>
-                        <a href="javascript:;">京网文[2020]0276-042号</a>
-                        <br>
-                        <a href="javascript:;">（京）网械平台备字（2018）第00005号</a>
-                        <a href="javascript:;">互联网药品信息服务资格证(京)-非经营性-2014-0090</a>
-                        <a href="javascript:;">营业执照</a>
-                        <a href="javascript:;">医疗器械质量公告</a>
-                        <br>
-                        <a href="javascript:;">增值电信业务许可证</a>&nbsp;网络食品经营备案 京食药网食备202010048 &nbsp;
-                        <a href="javascript:;">食品经营许可证</a>
-                        <br>
-                        违法和不良信息举报电话：171-5104-4404&nbsp;
-                        <a href="javascript:;">知识产权侵权投诉</a>&nbsp;本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+            <!-- 搭配对应内容 -->
+            <ul id='col' class="clearfix"></ul>
 
-                    </p>
-                    <div class="sites-pic">
-                        <a href="javascript:;"><img src="./img/copy1.png" alt=""></a>
-                        <a href="javascript:;"><img src="./img/copy2.png" alt=""></a>
-                        <a href="javascript:;"><img src="./img/copy3.png" alt=""></a>
-                        <a href="javascript:;"><img src="./img/copy4.png" alt=""></a>
-                        <a href="javascript:;"><img src="./img/copy5.png" alt=""></a>
-                    </div>
+            <!-- 配件对应内容 -->
+            <ul id="parts" class="clearfix"></ul>
 
-
-
-                </div>
-            </div>
-            <!-- slogan -->
-            <div class="slogan"></div>
+            <!-- 周边内容 -->
+            <ul id="other" class="clearfix"></ul>
         </div>
-    </footer>
+    </section>
 
-    <!--引入js -->
-    <script src="./js/goods1.js"></script>
+
  
-    
-    <!-- 工具栏右侧的 -->
-    <div class="home-tool-bar">
-        <a href="javascript:void(0);" class="item">
-            <div class="icon">
-                <img src="img/w1.png" alt="">
-            </div>
-            <span class="text">
-                手机APP
-            </span>
-            <div class="pop-content">
-                <img src="./img/erweima.png" alt="">
-                <span class="decs">
-                    扫码领取新人百元礼包
-                </span>
-            </div>
-        </a>
-        <a href="./favorite.html" class="item">
-            <div class="icon">
-                <img src="img/w2.png" alt="">
-            </div>
-            <span class="text">
-                个人中心
-            </span>
-        </a>
-        <a href="javascript:void(0);" class="item">
-            <div class="icon">
-                <img src="img/w3.png" alt="">
-            </div>
-            <span class="text">
-                售后服务
-            </span>
-        </a>
-        <a href="javascript:void(0);" class="item">
-            <div class="icon">
-                <img src="img/w4.png" alt="">
-            </div>
-            <span class="text">
-                人工客服
-            </span>
-        </a>
-        <a href="./cart.html" class="item">
-            <div class="icon">
-                <img src="img/w5.png" alt="">
-            </div>
-            <span class="text">
-                购物车
-            </span>
-        </a>
 
-    </div>
+    <!-- 引入分类的js -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/sort.js"></script>
 </body>
 
 </html>

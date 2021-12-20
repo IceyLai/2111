@@ -21,13 +21,16 @@ class Login{
         // 点击登录时获取文本的值与json文件的数据匹配，如果有就登录
         // 获取是否存在这个电话号码对应的数据
         let {data}=await axios.get('http://localhost:3000/user?phone='+phoneNum)
-        console.log(data);
+        // console.log(data);
 
         // 如果存在这个号码就判断密码是否正确
-        if(data){
+        if(data.length!=0){
             // console.log(data[0].password);
             if(data[0].password==pwd){
+                // 登录成功再local中保存一个状态，再其它页面也能共享
+               localStorage.setItem('isLogin',JSON.stringify('true'))
                 location.href='./index1.html'
+
             }else{
                 alert('密码不正确')
             }

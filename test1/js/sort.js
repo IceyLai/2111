@@ -68,10 +68,11 @@ class Tab {
     }
 
     // 把手机对应数据渲染到页面上
-    async showPhoneData() {
+    // _page当前页码，_limit一个页面需要获取的数据条数
+    async showPhoneData(currentPage=1,len=8) {
         let {
             data
-        } = await axios.get('http://localhost:3000/phone')
+        } = await axios.get('http://localhost:3000/data?_page='+currentPage+'&_limit='+len)
         // console.log(data); //结果为数组中有8条数据
 
         // 定义一个变量用于拼接内容
@@ -90,7 +91,7 @@ class Tab {
                 原价：<span class="oldPrice">${ele.oldPrice}</span>
             </p>
             </a>
-            <div class="phoneCart"><a href="#">加入购物车</a></div>
+            <div class="phoneCart"><a href="./cart.html" onclick="Tab.addCart(${ele.id},1)">加入购物车</a></div>
         </li>`
         });
         // 把循环得到的数据，添加到页面中
@@ -99,10 +100,10 @@ class Tab {
 
 
     // 把家电对应数据渲染到页面上
-    async showEleData() {
+    async showEleData(currentPage=2,len=8) {
         let {
             data
-        } = await axios.get('http://localhost:3000/equipment')
+        } = await axios.get('http://localhost:3000/data?_page='+currentPage+'&_limit='+len)
         // console.log(data); //结果为数组中有8条数据
 
         // 定义一个变量用于拼接内容
@@ -112,7 +113,7 @@ class Tab {
         data.forEach(ele => {
             // console.log(ele);
             html += `<li class="phoneItem">
-            <a href="#">
+            <a href="./goods-details.html?id=${ele.id}">
             <img src="${ele.src}" class="phonePic" alt="">
             <h3 class="phoneItem-name">${ele.name}</h3>
             <p class="phoneItem-info">${ele.info}</p>
@@ -121,7 +122,7 @@ class Tab {
                 原价：<span class="oldPrice">${ele.oldPrice}</span>
             </p>
             </a>
-            <div class="phoneCart"><a href="#">加入购物车</a></div>
+            <div class="phoneCart"><a href="./cart.html" onclick="Tab.addCart(${ele.id},1)">加入购物车</a></div>
         </li>`
         });
         // 把循环得到的数据，添加到页面中
@@ -129,10 +130,10 @@ class Tab {
     }
 
     // 把智能数据渲染到页面
-    async showMasterData() {
+    async showMasterData(currentPage=3,len=8) {
         let {
             data
-        } = await axios.get(' http://localhost:3000/intelligence')
+        } = await axios.get('http://localhost:3000/data?_page='+currentPage+'&_limit='+len)
         // console.log(data); //结果为数组中有8条数据
 
         // 定义一个变量用于拼接内容
@@ -141,7 +142,7 @@ class Tab {
         // 循环这个数组
         data.forEach(ele => {
             html += `<li class="phoneItem">
-            <a href="#">
+            <a href="./goods-details.html?id=${ele.id}">
             <img src="${ele.src}" class="phonePic" alt="">
             <h3 class="phoneItem-name">${ele.name}</h3>
             <p class="phoneItem-info">${ele.info}</p>
@@ -150,7 +151,7 @@ class Tab {
                 原价：<span class="oldPrice">${ele.oldPrice}</span>
             </p>
             </a>
-            <div class="phoneCart"><a href="#">加入购物车</a></div>
+            <div class="phoneCart"><a href="./cart.html" onclick="Tab.addCart(${ele.id},1)">加入购物车</a></div>
         </li>`
         });
         // 把循环得到的数据，添加到页面中
@@ -158,10 +159,10 @@ class Tab {
     }
 
     // 把搭配数据渲染到页面
-    async showColData() {
+    async showColData(currentPage=4,len=8) {
         let {
             data
-        } = await axios.get(' http://localhost:3000/col')
+        } = await axios.get('http://localhost:3000/data?_page='+currentPage+'&_limit='+len)
         // console.log(data); //结果为数组中有8条数据
 
         // 定义一个变量用于拼接内容
@@ -171,7 +172,7 @@ class Tab {
         data.forEach(ele => {
             // console.log(ele);
             html += `<li class="phoneItem">
-            <a href="#">
+            <a href="./goods-details.html?id=${ele.id}">
             <img src="${ele.src}" class="phonePic" alt="">
             <h3 class="phoneItem-name">${ele.name}</h3>
             <p class="phoneItem-info">${ele.info}</p>
@@ -180,7 +181,7 @@ class Tab {
                 原价：<span class="oldPrice">${ele.oldPrice}</span>
             </p>
             </a>
-            <div class="phoneCart"><a href="#">加入购物车</a></div>
+            <div class="phoneCart"><a href="./cart.html" onclick="Tab.addCart(${ele.id},1)">加入购物车</a></div>
         </li>`
         });
         // 把循环得到的数据，添加到页面中
@@ -189,10 +190,10 @@ class Tab {
 
 
     // 把配件数据渲染到页面
-    async showPartsData() {
+    async showPartsData(currentPage=5,len=8) {
         let {
             data
-        } = await axios.get('http://localhost:3000/parts')
+        } = await axios.get('http://localhost:3000/data?_page='+currentPage+'&_limit='+len)
         // console.log(data); //结果为数组中有8条数据
 
         // 定义一个变量用于拼接内容
@@ -201,7 +202,7 @@ class Tab {
         // 循环这个数组
         data.forEach(ele => {
             html += `<li class="phoneItem">
-            <a href="#">
+            <a href="./goods-details.html?id=${ele.id}">
             <img src="${ele.src}" class="phonePic" alt="">
             <h3 class="phoneItem-name">${ele.name}</h3>
             <p class="phoneItem-info">${ele.info}</p>
@@ -210,7 +211,7 @@ class Tab {
                 原价：<span class="oldPrice">${ele.oldPrice}</span>
             </p>
             </a>
-            <div class="phoneCart"><a href="#">加入购物车</a></div>
+            <div class="phoneCart"><a href="./cart.html" onclick="Tab.addCart(${ele.id},1)">加入购物车</a></div>
         </li>`
         });
         // 把循环得到的数据，添加到页面中
@@ -219,10 +220,10 @@ class Tab {
 
 
     // 把周边数据渲染到页面
-    async showOthersData() {
+    async showOthersData(currentPage=6,len=8) {
         let {
             data
-        } = await axios.get('http://localhost:3000/others')
+        } = await axios.get('http://localhost:3000/data?_page='+currentPage+'&_limit='+len)
         // console.log(data); //结果为数组中有8条数据
 
         // 定义一个变量用于拼接内容
@@ -231,7 +232,7 @@ class Tab {
         // 循环这个数组
         data.forEach(ele => {
             html += `<li class="phoneItem">
-            <a href="#">
+            <a href="./goods-details.html?id=${ele.id}">
             <img src="${ele.src}" class="phonePic" alt="">
             <h3 class="phoneItem-name">${ele.name}</h3>
             <p class="phoneItem-info">${ele.info}</p>
@@ -240,11 +241,48 @@ class Tab {
                 原价：<span class="oldPrice">${ele.oldPrice}</span>
             </p>
             </a>
-            <div class="phoneCart"><a href="#">加入购物车</a></div>
+            <div class="phoneCart"><a href="./cart.html" onclick="Tab.addCart(${ele.id},1)">加入购物车</a></div>
         </li>`
         });
         // 把循环得到的数据，添加到页面中
         this.otherData.innerHTML = html
+    }
+
+    // 加入购物车回调函数
+    static addCart(gId,num){
+        // console.log(gId,num);
+
+        // 先获取local中cart这个数据
+        let cartGoods=localStorage.getItem('cart')
+
+        // 判断数据是否存在
+        if(cartGoods){//如果有
+            // 先把json格式转化为js对象
+            cartGoods=JSON.parse(cartGoods)
+            // console.log(cartGoods);
+
+            // 循环这个对象，判断id是否存在，存在则数量加1修改local的数量，不存在则添加到local中
+            for(let attr in cartGoods){
+                // console.log(attr);
+                if(attr==gId){
+                    // 把数量加1
+                    num+=cartGoods[gId]
+                }
+            }
+            // 把获取更改后的数量赋值给cartGoods[gid],id所对应的值
+            // 存在则修改，不存在则添加
+            cartGoods[gId]=num
+
+            // 把cartGoods的值存在local中
+            localStorage.setItem('cart',JSON.stringify(cartGoods))
+
+        }else{//如果没有
+            // 以id为键，num为值，定义一个对象
+             cartGoods={[gId]:num}
+            // local中不能直接存对象，需要转化为json字符串
+            localStorage.setItem('cart',JSON.stringify(cartGoods))
+        }
+
     }
 
 }

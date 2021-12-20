@@ -21,6 +21,33 @@
     <!-- layui -->
     <link rel="stylesheet" href="./layui-v2.6.8/layui/css/layui.css">
     <script src="./layui-v2.6.8/layui/layui.js"></script>
+    <style>
+        #detailsNum .numChange {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 20px;
+            font-size: 20px;
+            /* margin-top: 10px; */
+            vertical-align: middle;
+        }
+
+        #detailsNum input {
+            width: 50px;
+            height: 20px;
+            vertical-align: top;
+            /* border: 1px solid #ccc; */
+            text-align: center;
+            line-height: 20px;
+            vertical-align: middle;
+        }
+        #totalPrice{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 
 
@@ -546,7 +573,7 @@
     </header>
     <!-- 吸顶效果 -->
     <div class="xi-product">
-        <div class="xm-nav" >
+        <div class="xm-nav">
             <div class="container">
                 <h2>Redmi K30 5G</h2>
                 <a href="#">用户评价</a>
@@ -570,64 +597,112 @@
         <div class="product-box">
             <!-- 左边轮播 写成放大镜效果-->
             <div class="imgLeft">
-               
+
             </div>
 
             <!-- 右边数据部分 -->
             <div class="product-con">
                 <h2>Redmi K30 5G</h2>
                 <p class="sale-decr">
-                    双模5G/三路并发/高通骁龙765G /7nm 5G低功耗处理器/120Hz高帧率流速屏/6.6''小孔径全面屏/索尼6400万前后六摄/最高可选8GB+256GB大存储/4500mAh+30W/快充/3D四曲面玻璃机身Ⅰ多功能NFC
+                    双模5G/三路并发/高通骁龙765G /7nm
+                    5G低功耗处理器/120Hz高帧率流速屏/6.6''小孔径全面屏/索尼6400万前后六摄/最高可选8GB+256GB大存储/4500mAh+30W/快充/3D四曲面玻璃机身Ⅰ多功能NFC
                 </p>
-                <p class="company-info">
-                    小米自营
-                </p>
+               
                 <p class="price-info">
-                    <span>
-                        1799
-                    </span>
+                    <!-- <span>
+                        价格：1799
+                    </span> -->
+
                 </p>
                 <div class="line">
 
                 </div>
-                <div class="product-address">
-                    <i class="iconfont icon-dingwei icon"></i>
-                    <div class="address-con">
-                        <div>
-                            <div class="address-info">
-                                <span>北京</span>
-                                <span>北京市</span>
-                                <span>海淀区</span>
-                                <span>清河街道</span>
-                                <a href="javascript;">修改</a>
-                            </div>
-                        </div>
-                        <div class="storage">
-                            <span>有现货</span>
-                        </div>
-                    </div>
-                </div>
+
+
+                <!-- 选择版本 -->
                 <div class="buychoies">
                     <div class="title fs18">
-                        选择颜色
+                        选择版本
                     </div>
-                    <ul class="clearfix">
-                        <li title="紫玉幻境" class="active">
-                            <a href="">
-                                紫玉幻境
-                            </a>
+                    <ul class="clearfix" id='phoneEdition'>
+                        <li  class="active">
+                            64G
                         </li>
+                        <li  class="active">
+                            128G
+                        </li>
+                        <li  class="active">
+                            256G
+                        </li>
+                      <!-- <li class="active">
+                         选中的是哪个版本的价格
+                      </li> -->
+                      <input type="hidden" name="phoneEdition" value="">
                     </ul>
                 </div>
+                <!-- 选择颜色 -->
+
+                <div class="buychoies">
+                    <div class="title fs18" >
+                        选择颜色
+                    </div>
+                    <ul class="clearfix" id='phoneColor'>
+                        <li title="紫玉幻境" class="active">
+                            紫玉幻境
+                        </li>
+                        <li title="晴光白雪" class="active">
+                            晴光白雪
+                        </li>
+                        <li title=" 樱花蜜粉" class="active">
+
+                            樱花蜜粉
+
+                        </li>
+                        <li title=" 清凉薄荷" class="active">
+
+                            清凉薄荷
+
+                        </li>
+                        <input type="hidden" name="phoneColor">
+                    </ul>
+                </div>
+                <!-- 选择套餐 -->
+                <div class="buychoies">
+                    <div class="title fs18">
+                        选择套餐
+                    </div>
+                    <ul class="clearfix" id='phonePackage'>
+                        <li title="" class="active">
+                            标准版
+                        </li>
+                        <li title="" class="active">
+                            通用豪华版(带充电器)
+                        </li>
+                        <input type="hidden" name="phonePackage">
+                    </ul>
+                </div>
+
+                <!-- 选择后最终的显示 -->
                 <div class="selected-list">
                     <ul>
                         <li>
                             Redmi K30 5G 紫玉幻境 通用
-                            <span class="fr">1799</span>
+                            <!-- <span class="fr">1799</span> -->
+                            <div style="float: right;" id="detailsNum">
+                                数量：<input type="button" value="-" class="numChange"><input type="text" value="1"><input
+                                    type="button" value="+" class="numChange">
+                            </div>
                         </li>
                     </ul>
-                    <div class="total-price">
-                        总计：1799
+                    <div class="total-price clearfix"  id='totalPrice'>
+                       
+                            <span>
+                                小计：1799
+                            </span>
+    
+                            <span>
+                                总计：1799
+                            </span>
                     </div>
                 </div>
                 <div class="btn-box">
@@ -865,8 +940,8 @@
     <!--引入js -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/goods1.js"></script>
- 
-    
+
+
     <!-- 工具栏右侧的 -->
     <div class="home-tool-bar">
         <a href="javascript:void(0);" class="item">

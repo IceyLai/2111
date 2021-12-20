@@ -16,6 +16,36 @@ class Goods1 {
         this.headerLis = document.querySelectorAll('.h-list>li')
         // console.log(this.headerLis);
 
+        // 获取选择版本下的所有的li
+        this.editionLis = document.querySelectorAll('#phoneEdition>li')
+        // console.log(this.editionLis);
+        // 获取手机版本下的input隐藏框
+        this.editionInput = document.querySelector('#phoneEdition>input')
+        // console.log(this.editionInput);
+
+        // 获取选择颜色下的所有的li
+        this.colorLis = document.querySelectorAll('#phoneColor>li')
+        //   console.log(this.colorLis);
+        // 获取选择颜色下的隐藏框
+        this.colorInput = document.querySelector('#phoneColor>input')
+        // console.log(this.colorInput);
+
+
+        // 获取选择套餐下的所有的li
+        this.packageLis = document.querySelectorAll('#phonePackage>li')
+        // console.log(this.packageLis);
+        // 获取选择套餐下的input隐藏域
+        this.packageInput = document.querySelector('#phonePackage>input')
+        // console.log(this.packageInput);
+
+        // 定义版本对应的价格
+        this.editionPrice = 0
+
+        // 定义套餐对应的价格
+        this.packagePrice = 0
+
+
+
         // 给关闭这个a链接绑定事件
         this.close.addEventListener('click', this.closeFn.bind(this))
 
@@ -27,6 +57,15 @@ class Goods1 {
 
         // 调用顶部鼠标移入时，所有的div显示、隐藏
         this.headerNav()
+
+        // 调用获取选择的版本，颜色，套餐的函数
+        this.getEditionInfo()
+
+        // 获取版本信息的函数
+        // this.getPackageInfo()
+
+        // 获取颜色信息的函数
+        // this.getColorInfo()
 
     }
     fixed() {
@@ -68,7 +107,7 @@ class Goods1 {
         // 通过id查询json里面对应的数据
         let {
             data
-        } = await axios.get('http://localhost:3000/phone?id=' + id)
+        } = await axios.get(' http://localhost:3000/data?id=' + id)
         // console.log(data);
 
         // 把获取到的数据渲染到页面上
@@ -183,5 +222,71 @@ class Goods1 {
             }
         }
     }
+
+
+    // 获取购买商品的信息，给小计和总计赋值
+    async getEditionInfo() {
+        let that = this
+        // 循环选择版本下的所有的li
+        for (let i = 0; i < this.editionLis.length; i++) {
+            this.editionLis[i].onclick = function () {
+                // console.log( that.editionLis[i].innerHTML.trim());
+                // 拿选中的li的值作为变量去作比较，给对应的价格赋值,需要去除空格
+                switch (that.editionLis[i].innerHTML.trim()) {
+                    case '64G':
+                        that.editionPrice = 1799
+                        break;
+                    case '128G':
+                        that.editionPrice = 2799
+                        break;
+                    case '256G':
+                        that.editionPrice = 3799
+                        break;
+                    default:
+                        break
+                }
+                //    把获取到的改变的值赋值给隐藏文本域
+                that.editionInput.value = that.editionPrice
+            }
+        }
+
+
+        for (let j = 0; j < this.packageLis.length; j++) {
+            this.packageLis[j].onclick = function () {
+                // console.log(111);
+                // console.log(that.packageLis[j].innerHTML.trim());
+                // 标准版价格就是选中的版本价格所以这里赋值为0
+                // 豪华版再原来版本的基础上多200元
+                switch (that.packageLis[j].innerHTML.trim()) {
+                    case '标准版':
+                        that.packagePrice = 0
+                        break;
+                    case '通用豪华版(带充电器)':
+                        that.packagePrice = 200
+                        break;
+                    default:
+                        break
+                }
+                // 把获取到值赋值给隐藏文本域
+                that.packageInput.value = that.packagePrice
+            }
+        }
+
+
+        for (let k = 0; k < this.colorLis.length; k++) {
+            this.colorLis[k].onclick = function () {
+                //    把获取到的值赋值给隐藏文本域
+                that.colorInput.value = that.colorLis[k].innerHTML.trim()
+            }
+        }
+
+        //    定义延时器，延迟获取值
+        setTimeout(function () {
+            console.log(that.editionInput.value, that.colorInput.value, that.packageInput.value);
+
+        }, 10000)
+    }
+
+
 }
 new Goods1

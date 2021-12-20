@@ -8,13 +8,37 @@
     <title>购物车</title>
 
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/cart.css">  
+    <link rel="stylesheet" href="./css/cart.css">
     <link rel="stylesheet" href="./iconfont/iconfont.css">
     <link rel="shortcut icon" href="./icon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./layui-v2.6.8/layui/css/layui.css">
     <link rel="stylesheet" href="./css/loading.css">
-
+    <style>
+        #tab .checkbox>input {
+            width: 20px;
+            height: 20px;
+        }
+        #tab .count>span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            background-color: #ccc;
+            line-height: 20px;
+        }
+        #tab>tr>td{
+            text-align: center;
+        }
+        #tHead input{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+        #tHead>tr>th{
+            text-align: center;
+        }
+    </style>
 
 </head>
 
@@ -61,9 +85,9 @@
 
             <!-- 购物车选项 -->
             <table>
-                <thead>
+                <thead id='tHead'>
                     <tr>
-                        <th style="width: 110px;">序号</th>
+                        <th style="width: 110px;">全选：<input type="checkbox"></th>
                         <th style="width: 120px;">图片</th>
                         <th style="width: 380px;">商品名称</th>
                         <th style="width: 158px;">单价</th>
@@ -72,7 +96,27 @@
                         <th style="width: 80px;">操作</th>
                     </tr>
                 </thead>
-                <tbody id="tab"></tbody>
+                <tbody id="tab">
+                    <tr>
+                        <td class="checkbox">
+                            <input class="check-one check" type="checkbox" />
+                        </td>
+                        <td class="goods">
+                            <img src="./img/children-list 手机1.png" alt="" />
+                        </td>
+                        <td>111</td>
+                        <td class="price">1799</td>
+                        <td class="count">
+                            <span class="reduce">-</span>
+                            <input class="count-input" type="text" value="1" />
+                            <span class="add">+</span>
+                        </td>
+                        <td class="subtotal">4000</td>
+                        <td class="operation">
+                            <span class="delete">删除</span>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
 
             <!-- 合计 -->
@@ -299,48 +343,7 @@
         </div>
     </section>
 
-    <script type="type/html" id="tpl">
-        {{ each data item}}
-        <tr>
-            <td>{{ item.id}} </td>
-            <td><img src="{{item.img[4]}}" alt=""></td>
-            <td> {{item.pName}} </td>
-            <td>{{ item.pPrice}}</td>
-            <td> 
-                <button class='sub'>-</button>
-                <input value="{{ item.number}}">
-                <button class='sup'>+</button> 
-            </td>
-            <td> {{item.pTotal}} </td>
-            <td><i class="del iconfont icon-cha"></i></td>        
-        </tr>
-         
-        {{ /each }}
-    </script>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/template-web.min.js"></script>
-
     <script src="./js/cart.js"></script>
-    <script src="./js/loading.js"></script>
-    <script src="./layui-v2.6.8/layui/layui.js"></script>
-
-    <script>
-
-        
-      
-     
-    
-
-
-
-
-
-
-
-
-      
-    </script>
-
 </body>
 
 </html>

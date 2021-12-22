@@ -494,7 +494,308 @@
       "info": "120Hz高帧率流速屏",
       "nowPrice": "1799元",
       "oldPrice": "8899元"
+    },
+    {
+      "id":49,
+      "src":"./img/推荐1.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":50,
+      "src":"./img/推荐2.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":51,
+      "src":"./img/推荐3.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":52,
+      "src":"./img/推荐4.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":53,
+      "src":"./img/推荐5.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":54,
+      "src":"./img/推荐6.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":55,
+      "src":"./img/推荐7.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":56,
+      "src":"./img/推荐8.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":57,
+      "src":"./img/推荐9.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":58,
+      "src":"./img/推荐10.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":59,
+      "src":"./img/推荐11.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":60,
+      "src":"./img/推荐12.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":61,
+      "src":"./img/推荐13.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":62,
+      "src":"./img/推荐14.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":63,
+      "src":"./img/推荐15.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":64,
+      "src":"./img/推荐16.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":65,
+      "src":"./img/推荐17.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":66,
+      "src":"./img/推荐18.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":67,
+      "src":"./img/推荐19.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
+    },
+    {
+      "id":68,
+      "src":"./img/推荐20.webp",
+      "name":"Note 9 4G",
+      "info": "120Hz高帧率流速屏",
+      "nowPrice": "1799元",
+      "oldPrice": "8899元"
     }
-
+  ],
+  "recommend":[
+    {
+      "id":49,
+      "src":"./img/推荐1.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":50,
+      "src":"./img/推荐2.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":51,
+      "src":"./img/推荐3.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":52,
+      "src":"./img/推荐4.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":53,
+      "src":"./img/推荐5.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":54,
+      "src":"./img/推荐6.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":55,
+      "src":"./img/推荐7.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":56,
+      "src":"./img/推荐8.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":57,
+      "src":"./img/推荐9.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":58,
+      "src":"./img/推荐10.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":59,
+      "src":"./img/推荐11.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":60,
+      "src":"./img/推荐12.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":61,
+      "src":"./img/推荐13.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":62,
+      "src":"./img/推荐14.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":63,
+      "src":"./img/推荐15.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":64,
+      "src":"./img/推荐16.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":65,
+      "src":"./img/推荐17.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":66,
+      "src":"./img/推荐18.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":67,
+      "src":"./img/推荐19.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    },
+    {
+      "id":68,
+      "src":"./img/推荐20.webp",
+      "name":"Note 9 4G",
+      "price":"2799",
+      "praise":"5.6万好评"
+    }
   ]
 }

@@ -247,7 +247,7 @@ section .s-con .cart-bar p:last-child .total-money {
     font-size: 12px;
     line-height: 28px;
     border: 1px solid #ff6700;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #ff6700;
     text-align: center;
     margin-top: 28px;
@@ -258,3 +258,4 @@ section .s-con .cart-bar p:last-child .total-money {
     background-color: #ff6700;
     color: #fff;
 }
+

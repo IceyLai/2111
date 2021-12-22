@@ -27,6 +27,13 @@ class Tab {
         //  // 获取周边对应的ul
         this.otherData = document.querySelector('#other')
 
+        // 获取分类页面购物车数量对应的节点
+        this.sortCartNum=document.querySelector('#sortCartNum')
+        // console.log(this.sortCartNum);
+        // 获取 购物车对应的下拉列表
+        this.cartMenu=document.querySelector('.cart-menu')
+        // console.log(this.cartMenu);
+
         // 点击进行切换
         this.tab()
 
@@ -47,6 +54,9 @@ class Tab {
 
         // 渲染周边数据
         this.showOthersData()
+
+        // 调用函数获取购物车数量
+        this.getCartNum()
     }
     tab() {
         // 在有this的地方获取到this赋值给that
@@ -283,6 +293,28 @@ class Tab {
             localStorage.setItem('cart',JSON.stringify(cartGoods))
         }
 
+    }
+
+    // 获取local中对象数据的长度赋值给span的内容
+    getCartNum(){
+        // 获取local中cart这个对象中数据长度
+        let res=localStorage.getItem('cart')
+        // console.log(res);//null,有的话res是一个对象
+        // 把json数据转化为js对象
+        res=JSON.parse(res)
+
+        // 判断购物车是否有数据
+        if(!res){//没有数据
+            // console.log(111);
+            this.sortCartNum.innerHTML='(0)'
+            this.cartMenu.innerHTML='购物车中还没有数据，快去下方添加吧'
+            this.cartMenu.style.display='block'
+        }else{//如果有数据，就计算数据条数
+            let len=Object.getOwnPropertyNames(res).length
+            // console.log(len);
+            this.sortCartNum.innerHTML='('+len+')'
+            this.cartMenu.style.display='none'
+        }
     }
 
 }

@@ -38,13 +38,25 @@ class Goods1 {
         this.packageInput = document.querySelector('#phonePackage>input')
         // console.log(this.packageInput);
 
+        // 获取手机版本颜色套餐对应内容存放位置的节点对象
+        this.phoneEditionInfo = document.querySelector('#phoneEditionInfo')
+        this.phoneColorInfo = document.querySelector('#phoneColorInfo')
+        this.phonePackageInfo = document.querySelector('#phonePackageInfo')
+        // console.log(this.phoneEditionInfo,this.phoneColorInfo,this.phonePackageInfo);
+
+
+        // 获取分类页面购物车数量对应的节点
+        this.sortCartNum=document.querySelector('#sortCartNum')
+        // console.log(this.sortCartNum);
+        // 获取 购物车对应的下拉列表
+        this.cartMenu=document.querySelector('.cart-menu')
+        // console.log(this.cartMenu);
+
         // 定义版本对应的价格
         this.editionPrice = 0
 
         // 定义套餐对应的价格
         this.packagePrice = 0
-
-
 
         // 给关闭这个a链接绑定事件
         this.close.addEventListener('click', this.closeFn.bind(this))
@@ -61,11 +73,23 @@ class Goods1 {
         // 调用获取选择的版本，颜色，套餐的函数
         this.getEditionInfo()
 
-        // 获取版本信息的函数
-        // this.getPackageInfo()
+        //    获取减号和加号
+        this.reduceNum = document.querySelector('#reduceNum')
+        this.addNum = document.querySelector('#addNum')
+        // console.log(this.reduceNum,this.addNum);
+        // 给减号绑定事件
+        this.reduceNum.addEventListener('click', this.reduceNumFn.bind(this))
 
-        // 获取颜色信息的函数
-        // this.getColorInfo()
+        // 给加号绑定事件
+        this.addNum.addEventListener('click', this.addNumFn.bind(this))
+
+        // 获取加入购物车按钮，并给它绑定事件
+        this.putIn=document.querySelector('.putin')
+        this.putIn.addEventListener('click',this.putInFn.bind(this))
+
+
+        // 调用获取购物车数量的函数
+        this.getCartNum()
 
     }
     fixed() {
@@ -150,7 +174,6 @@ class Goods1 {
     }
     // 鼠标移入回调函数
     over(smallBox, mask, bigBox) {
-        // console.log(smallBox,mask,bigBox);
         // 给小盒子绑定移入事件
         smallBox.onmouseover = function () {
             // console.log(111);
@@ -176,11 +199,16 @@ class Goods1 {
             // console.log(e);
             // 兼容写法
             e = e || window.event
+        
+            // 获取外面大盒子距离左边的距离
+            let l=(document.querySelector('.imgLeft')).offsetLeft
+            let t=(document.querySelector('.imgLeft')).offsetTop
 
             // 获取鼠标坐标，并且让鼠标居于移动盒子中间
-            let x = e.clientX - smallBox.offsetParent.offsetLeft - mask.offsetWidth / 2
-            let y = e.clientY - smallBox.offsetParent.offsetTop - mask.offsetHeight / 2
+            let x = e.pageX - l-mask.offsetWidth/2
+            let y = e.pageY - t-mask.offsetHeight/2
 
+            // console.log(x);
             //边界值判断
             if (x <= 0) {
                 x = 0
@@ -234,19 +262,19 @@ class Goods1 {
                 // 拿选中的li的值作为变量去作比较，给对应的价格赋值,需要去除空格
                 switch (that.editionLis[i].innerHTML.trim()) {
                     case '64G':
-                        that.editionPrice = 1799
+                        that.editionPrice = '64G'
                         break;
                     case '128G':
-                        that.editionPrice = 2799
+                        that.editionPrice = '128G'
                         break;
                     case '256G':
-                        that.editionPrice = 3799
+                        that.editionPrice = '256G'
                         break;
                     default:
                         break
                 }
-                //    把获取到的改变的值赋值给隐藏文本域
-                that.editionInput.value = that.editionPrice
+                //    把获取到的改变的值赋值给下方内容区域
+                that.phoneEditionInfo.innerHTML = that.editionPrice
             }
         }
 
@@ -259,16 +287,16 @@ class Goods1 {
                 // 豪华版再原来版本的基础上多200元
                 switch (that.packageLis[j].innerHTML.trim()) {
                     case '标准版':
-                        that.packagePrice = 0
+                        that.packagePrice = '标准版'
                         break;
                     case '通用豪华版(带充电器)':
-                        that.packagePrice = 200
+                        that.packagePrice = '通用豪华版(带充电器)'
                         break;
                     default:
                         break
                 }
                 // 把获取到值赋值给隐藏文本域
-                that.packageInput.value = that.packagePrice
+                that.phonePackageInfo.innerHTML = that.packagePrice
             }
         }
 
@@ -276,15 +304,130 @@ class Goods1 {
         for (let k = 0; k < this.colorLis.length; k++) {
             this.colorLis[k].onclick = function () {
                 //    把获取到的值赋值给隐藏文本域
-                that.colorInput.value = that.colorLis[k].innerHTML.trim()
+                that.phoneColorInfo.innerHTML = that.colorLis[k].innerHTML.trim()
             }
         }
 
-        //    定义延时器，延迟获取值
-        setTimeout(function () {
-            console.log(that.editionInput.value, that.colorInput.value, that.packageInput.value);
+    }
 
-        }, 10000)
+    // 减号的回调函数
+    reduceNumFn() {
+        // console.log(111);
+        // console.log(this);指向类实例化对象
+
+        // console.log(this.reduceNum.nextElementSibling);
+        // 获取减号的下一个兄弟节点，
+        let numObj = this.reduceNum.nextElementSibling
+        // console.log(numObj.value);
+        // 如果数量为1就禁止点击减号
+        if (numObj.value == 1) {
+            this.reduceNum.disabled = true
+        } else {
+            // 获取节点里面的值，并且把值减1
+            numObj.value = (numObj.value - 0) - 1
+            // console.log(numObj.value);
+        }
+    }
+
+    // 数量增加的回调函数
+    addNumFn() {
+        // console.log(111);
+
+        // 获取它的上一个兄弟节点
+        let numObj = this.addNum.previousElementSibling
+        // console.log(numObj);
+
+        // 获取节点中的值，并把值加1
+        numObj.value = numObj.value - 0 + 1
+    }
+
+    // 需要传递参数id,和数量
+    updateLocal(id, num) {
+        // console.log(id,num);//获取到id和数量
+        // 1.取出local中的数据
+        let cartGoods = localStorage.getItem('cart')
+        // console.log(cartGoods);
+
+        //2.判断是否为空
+        if (!cartGoods) return
+
+        // 3.不为空则转化为js对象
+        cartGoods = JSON.parse(cartGoods)
+        // console.log(cartGoods);
+
+        //如果数量为0，就删除local中对应的id
+        // 删除对象属性
+        if (num == 0) {
+            delete cartGoods[id]
+
+        }
+        // console.log(cartGoods);
+
+        // 如果不为0就修改local中商品的数量
+        num != 0 && (cartGoods[id] = num)
+        // console.log(cartGoods);
+
+        // 然后把修改后的值设置到local数据中
+        localStorage.setItem('cart', JSON.stringify(cartGoods))
+
+    }
+
+    // 加入购物车的回调函数
+    putInFn(){
+        // console.log(1111);
+        // 当点击加入购物车时，获取所有的版本信息和数量。然后跳转到购物车页面
+
+        // 获取手机版本信息
+        let editionRes=this.phoneEditionInfo.innerHTML
+        let colorRes=this.phoneColorInfo.innerHTML
+        let packageRes=this.phonePackageInfo.innerHTML
+        // console.log(editionRes,colorRes,packageRes);
+
+        // 获取数量，和查询字符串中的id
+
+        let numObj=document.querySelector('#cartNum')
+        // console.log(numObj.value);
+
+          // 获取查询字符串中的传递的参数
+          let str = location.search
+          // console.log(str);//?id=2
+  
+          //再以等号分割取第1个
+          let id = str.split('=')[1]
+          // console.log(id);
+  
+          // 把id和数量传递给修改local中数据的函数
+          this.updateLocal(id, numObj.value)
+
+        //   获取加入购物车div中的a链接
+        let aObj=document.querySelector('.putin>a')
+        // console.log(aObj);
+
+        // 给a链接设置链接
+        aObj.href='./cart.html'
+    }
+
+
+    // 获取local中对象数据的长度赋值给span的内容
+    getCartNum(){
+        // 获取local中cart这个对象中数据长度
+        let res=localStorage.getItem('cart')
+        // console.log(res);//null,有的话res是一个对象
+        // 把json数据转化为js对象
+        res=JSON.parse(res)
+
+        // 判断购物车是否有数据
+        if(!res){//没有数据
+            // console.log(111);
+            this.sortCartNum.innerHTML='(0)'
+            this.cartMenu.innerHTML='购物车中还没有数据，快去下方添加吧'
+            this.cartMenu.style.display='block'
+        }else{//如果有数据，就计算数据条数
+            let len=Object.getOwnPropertyNames(res).length
+            // console.log(len);
+            this.sortCartNum.innerHTML='('+len+')'
+            this.cartMenu.style.display='none'
+        }
     }
 
 

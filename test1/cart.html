@@ -18,6 +18,8 @@
         #tab .checkbox>input {
             width: 20px;
             height: 20px;
+            cursor: pointer;
+
         }
         #tab .count>span{
             display: inline-block;
@@ -26,6 +28,7 @@
             text-align: center;
             background-color: #ccc;
             line-height: 20px;
+            cursor: pointer;
         }
         #tab>tr>td{
             text-align: center;
@@ -38,6 +41,29 @@
         #tHead>tr>th{
             text-align: center;
         }
+        .delete{
+            cursor: pointer;
+            /* color: rgb(255, 103, 0); */
+        }
+      #ulItem>.item{
+          overflow: visible;
+          position: relative;
+      }
+      #ulItem>.item>.item-btn{
+          display: none;
+          position: absolute;
+          bottom: 10px;
+          left: 58px;
+          cursor: pointer;
+      }
+      #clearCart{
+        margin-left: 20px;
+        cursor: pointer;
+      }
+
+      #clearShow{
+          display: none;
+      }
     </style>
 
 </head>
@@ -63,7 +89,7 @@
     <!-- 购物区 -->
     <section>
         <div class="s-con w">
-            <div class="cart clearfix">
+            <div class="cart clearfix" id='notLogin'>
                 <div class="cart-bg fl"></div>
                 <div class="cart-info fl">
                     <h2>你的购物车还是空的!</h2>
@@ -97,7 +123,7 @@
                     </tr>
                 </thead>
                 <tbody id="tab">
-                    <tr>
+                    <!-- <tr>
                         <td class="checkbox">
                             <input class="check-one check" type="checkbox" />
                         </td>
@@ -115,15 +141,25 @@
                         <td class="operation">
                             <span class="delete">删除</span>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
 
             <!-- 合计 -->
             <div class="cart-bar">
                 <p class="fl">共<span class="buy-number"></span>件商品</p>
+                <span  id='clearCart'>清空购物车</span>
                 <div class="pay fr">去结算</div>
                 <p class="fr">合计：<span class="total-money"></span>元</p>
+            </div>
+
+            <!-- 清空购物车后，显示的内容 -->
+            <div class="cart clearfix" id='clearShow'>
+                <div class="cart-bg fl"></div>
+                <div class="cart-info fl">
+                    <h2>你的购物车还是空的!</h2>
+                    <p>快去下方添加吧</p>
+                </div>
             </div>
 
         </div>
@@ -135,8 +171,8 @@
                 <div class="r-title pos-r">
                     <h3>为您推荐</h3>
                 </div>
-                <ul class="r-items">
-                    <li class="item">
+                <ul class="r-items" id='ulItem'>
+                    <!-- <li class="item">
                         <img src="./img/推荐1.webp" alt="">
                         <p class="item-name">Note 9 4G</p>
                         <p class="item-price">899元</p>
@@ -144,205 +180,15 @@
                         <div class="item-btn">
                             加入购物车
                         </div>
-                    </li>
-
-
-                    <li class="item ">
-                        <img src="./img/推荐2.webp" alt="">
-                        <p class="item-name">Note 9 5G</p>
-                        <p class="item-price">1199元</p>
-                        <p class="item-praise">72.5万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐3.webp" alt="">
-                        <p class="item-name">Redmi Note 10 Pro</p>
-                        <p class="item-price">1599元</p>
-                        <p class="item-praise">23.3万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐4.webp" alt="">
-                        <p class="item-name">Redmi K40 游戏增强版</p>
-                        <p class="item-price">1999元</p>
-                        <p class="item-praise">8.5万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐5.webp" alt="">
-                        <p class="item-name">Redmi 9A</p>
-                        <p class="item-price">499元</p>
-                        <p class="item-praise">66.8万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐6.webp" alt="">
-                        <p class="item-name">Note 9 Pro 5G</p>
-                        <p class="item-price">1399元</p>
-                        <p class="item-praise">72.5万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐7.webp" alt="">
-                        <p class="item-name">小米11</p>
-                        <p class="item-price">3799元</p>
-                        <p class="item-praise">23万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐8.webp" alt="">
-                        <p class="item-name">Redmi K40</p>
-                        <p class="item-price">1999元</p>
-                        <p class="item-praise">56.2万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐9.webp" alt="">
-                        <p class="item-name">黑鲨4</p>
-                        <p class="item-price">2499元</p>
-                        <p class="item-praise">7.9万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐10.webp" alt="">
-                        <p class="item-name">Redmi Note 10 5G</p>
-                        <p class="item-price">1099元</p>
-                        <p class="item-praise">23.3万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐11.webp" alt="">
-                        <p class="item-name">Redmi K40 Pro+</p>
-                        <p class="item-price">3399元</p>
-                        <p class="item-praise">56.2万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐12.webp" alt="">
-                        <p class="item-name">Redmi K40 Pro</p>
-                        <p class="item-price">2499元</p>
-                        <p class="item-praise">56.2万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-
-                    <li class="item ">
-                        <img src="./img/推荐13.webp" alt="">
-                        <p class="item-name">黑鲨4 Pro</p>
-                        <p class="item-price">3999元</p>
-                        <p class="item-praise">7.9万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐14.webp" alt="">
-                        <p class="item-name">小米10S</p>
-                        <p class="item-price">2999元</p>
-                        <p class="item-praise">14.7万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-
-                    <li class="item ">
-                        <img src="./img/推荐15.webp" alt="">
-                        <p class="item-name">Redmi K30 至尊纪念版</p>
-                        <p class="item-price">1999元</p>
-                        <p class="item-praise">61.8万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐16.webp" alt="">
-                        <p class="item-name">腾讯黑鲨游戏手机3S</p>
-                        <p class="item-price">3999元</p>
-                        <p class="item-praise">2.8万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐17.webp" alt="">
-                        <p class="item-name">小米11 青春版</p>
-                        <p class="item-price">2099元</p>
-                        <p class="item-praise">8.9万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐18.webp" alt="">
-                        <p class="item-name">小米11 Pro</p>
-                        <p class="item-price">4499元</p>
-                        <p class="item-praise">6.9万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐19.webp" alt="">
-                        <p class="item-name">Xiaomi MIX 4</p>
-                        <p class="item-price">4999元</p>
-                        <p class="item-praise">1810人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
-
-                    <li class="item ">
-                        <img src="./img/推荐20.webp" alt="">
-                        <p class="item-name">小米11 Uitra</p>
-                        <p class="item-price">5499元</p>
-                        <p class="item-praise">7.4万人好评</p>
-                        <div class="item-btn">
-                            加入购物车
-                        </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </section>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src='./layer-master/src/layer.js'></script>
     <script src="./js/cart.js"></script>
 </body>
 

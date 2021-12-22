@@ -9,11 +9,11 @@
    
 }
 .imgLeft>.smallBox{
-    margin-top: 150px;
+    /* top: 100px; */
     width: 200px;
     height: 200px;
     border: 1px solid #ccc;
-    position: absolute;
+    position: relative;
     cursor: move;
 }
 .imgLeft>.smallBox img{
@@ -31,7 +31,6 @@
     display: none;
 }
 .imgLeft .bigBox {
-    margin-top: 100px;
     width: 300px;
     height: 300px;
     border: 1px solid #ccc;

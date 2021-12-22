@@ -22,6 +22,14 @@
     <link rel="stylesheet" href="./iconfooter/iconfont.css">
     <script src="./iconfooter/iconfont.js"></script>
 
+    <style>
+        .selected{
+            background-color: rgb(255 103, 0);
+        }
+        .unselected{
+            background-color: red;
+        }
+    </style>
 
 
 </head>
@@ -111,10 +119,10 @@
                 </nav>
                 <!-- 购物车 -->
                 <div class="buy-cart fr">
-                    <a href="./cart.html">
+                    <a>
                         <i class="iconfont icon-gouwuche"></i>
                         <span>购物车</span>
-                        <span>(0)</span>
+                        <span id='cartNum'>(0)</span>
                     </a>
                     <!-- 下拉购物车 -->
                     <div class="cart-menu">
@@ -134,7 +142,6 @@
                     </li>
                     <li>
                         <a href="#">消息通知</a>
-
                     </li>
                 </ul>
             </div>
@@ -2117,7 +2124,44 @@
         </ul>
     </section>
 
-
+    <section class="home-tool">
+        <ul>
+            <li>
+                <i class="iconfont icon-shouji"></i>
+                <span>手机App</span>
+                <div class="mi-app">
+                    <img src="./img/mi-app.png" alt="">
+                    <span>
+                        扫码领取新人百元礼包
+                    </span>
+                </div>
+            </li>
+            <li>
+                <i class="iconfont  icon-yonghu"></i>
+                <span>个人中心</span>
+            </li>
+            <li>
+                <i class="iconfont  icon-gongju"></i>
+                <span>售后服务</span>
+            </li>
+            <li>
+                <i class="iconfont icon-kefu"></i>
+                <span>人工客服</span>
+            </li>
+            <li>
+                <a href="./cart.html">
+                    <i class="iconfont  icon-gouwuche"></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <i class="iconfont  icon-top"></i>
+                <span>回顶部</span>
+            </li>
+        </ul>
+    </section>
 
     <footer>
         <!-- 主体 -->

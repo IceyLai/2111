@@ -32,6 +32,7 @@
             font-size: 20px;
             /* margin-top: 10px; */
             vertical-align: middle;
+            cursor: pointer;
         }
 
         #detailsNum input {
@@ -138,7 +139,7 @@
                     <a href="./cart.html">
                         <i class="iconfont icon-gouwuche"></i>
                         <span>购物车</span>
-                        <span>(0)</span>
+                        <span id='sortCartNum'>(0)</span>
                     </a>
                     <!-- 下拉购物车 -->
                     <div class="cart-menu">
@@ -594,7 +595,8 @@
         </div>
 
         <!-- 弹性盒产品左右栏 -->
-        <div class="product-box">
+        <div class="product-box" >
+            <!-- style="position: relative;" -->
             <!-- 左边轮播 写成放大镜效果-->
             <div class="imgLeft">
 
@@ -686,27 +688,21 @@
                 <div class="selected-list">
                     <ul>
                         <li>
-                            Redmi K30 5G 紫玉幻境 通用
-                            <!-- <span class="fr">1799</span> -->
+                            <span>Redmi K30 5G</span>
+                            <span id='phoneEditionInfo'></span>
+                            <span id='phoneColorInfo'></span>
+                            <span id='phonePackageInfo'></span>
                             <div style="float: right;" id="detailsNum">
-                                数量：<input type="button" value="-" class="numChange"><input type="text" value="1"><input
-                                    type="button" value="+" class="numChange">
+                                数量：<input type="button" value="-" class="numChange" id="reduceNum"><input type="text" value="1" id="cartNum"><input
+                                    type="button" value="+" class="numChange" id="addNum">
                             </div>
                         </li>
                     </ul>
                     <div class="total-price clearfix"  id='totalPrice'>
-                       
-                            <span>
-                                小计：1799
-                            </span>
-    
-                            <span>
-                                总计：1799
-                            </span>
                     </div>
                 </div>
                 <div class="btn-box">
-                    <div class="putin"> <a href="javascript:0;">加入购物车</a></div>
+                    <div class="putin"> <a>加入购物车</a></div>
                     <div class="likes"> <a href="#"><i class="iconfont icon-xin"></i>喜欢</a></div>
                 </div>
                 <div class="after-sale-info">
